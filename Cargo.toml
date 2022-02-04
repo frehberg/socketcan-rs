@@ -5,14 +5,14 @@ documentation = "https://docs.rs/socketcan"
 license = "MIT"
 name = "socketcan"
 repository = "https://github.com/mbr/socketcan-rs"
-version = "1.7.0"
+version = "1.8.0"
 edition = "2018"
 
 [dependencies]
-hex = "0.4"
-itertools = "0.8"
-libc = "0.2"
-nix = "0.15"
+hex = "^0.4"
+itertools = "^0.10"
+libc = "^0.2"
+nix = "^0.23"
 
 [features]
 vcan_tests = []
