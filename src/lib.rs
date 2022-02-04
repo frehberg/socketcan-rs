@@ -164,14 +164,8 @@ impl fmt::Display for CANSocketOpenError {
 }
 
 impl error::Error for CANSocketOpenError {
-    fn description(&self) -> &str {
-        match *self {
-            CANSocketOpenError::LookupError(_) => "can device not found",
-            CANSocketOpenError::IOError(ref e) => e.description(),
-        }
-    }
 
-    fn cause(&self) -> Option<&error::Error> {
+    fn cause(&self) -> Option<& dyn error::Error> {
         match *self {
             CANSocketOpenError::LookupError(ref e) => Some(e),
             CANSocketOpenError::IOError(ref e) => Some(e),
